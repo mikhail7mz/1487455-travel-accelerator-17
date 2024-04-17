@@ -1,0 +1,71 @@
+@use "sass:list" as *;
+@use "./variables" as *;
+@use "./media" as *;
+
+/// Миксин для добавления адаптивной фоновой картинки
+/// формат имени файла:
+/// name--viewport@dppx.extention
+/// @param {String} $name      - базовая часть имени картинки
+/// @param {String} $extention - расширение (формат) файла картинки
+/// @param {Number} $maxdppx   - максимальная плотность пикселей для ретина дисплеев
+/// @param {List}   $viewports - список вьюпортов от меньшего к большему
+/// @param {String} $preimage  - верхний слой картинки, например полупрозрачная маска
+/// @param {String} $postimage - нижний слой картинки, например градиентная подложка прозрачной картинки
+
+@mixin bg-image($name, $extention, $maxdppx: 1, $viewports, $preimage: "", $postimage: "") {
+  @each $viewport in $viewports {
+    $media-query: null;
+
+    @if $viewport == mobile { /* stylelint-disable-line at-rule-no-unknown */
+      $media-query: all;
+    }
+
+    @if $viewport == tablet { /* stylelint-disable-line at-rule-no-unknown */
+      $media-query: $not-mobile;
+    }
+
+    @if $viewport == desktop { /* stylelint-disable-line at-rule-no-unknown */
+      $media-query: $desktop-only;
+    }
+
+    $dppx: 1;
+
+    @while $dppx <= $maxdppx { /* stylelint-disable-line at-rule-no-unknown */
+      @if $dppx == 1 { /* stylelint-disable-line at-rule-no-unknown */
+        @media #{$media-query} {
+          @include bg-image-choose-format($name, $extention, $dppx, $viewport, $preimage, $postimage);
+        }
+      }
+
+      @else { /* stylelint-disable-line at-rule-no-unknown */
+        @media #{$media-query} and (min-resolution: #{$dppx}dppx) {
+          @include bg-image-choose-format($name, $extention, $dppx, $viewport, $preimage, $postimage);
+        }
+      }
+
+      $dppx: $dppx + 1;
+    }
+  }
+}
+
+/// Служебный миксин для миксина bg-image
+@mixin bg-image-choose-format($name, $extention, $dppx, $viewport, $preimage: "", $postimage: "") {
+  $formats: #{$extention}, webp;
+
+  @each $format in $formats {
+    $class-name: if(($format == webp) or ($format == avif), ".#{$format}", "");
+    $url: url("../img/#{$name}--#{$viewport}@#{$dppx}x.#{$format}");
+
+    @if $preimage != "" { /* stylelint-disable-line at-rule-no-unknown */
+      $url: $preimage, $url;
+    }
+
+    @if $postimage != "" { /* stylelint-disable-line at-rule-no-unknown */
+      $url: $url, $postimage;
+    }
+
+    #{$class-name} & {
+      background-image: $url;
+    }
+  }
+}

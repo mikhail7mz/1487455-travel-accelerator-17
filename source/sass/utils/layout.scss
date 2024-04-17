@@ -1,0 +1,23 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+
+.layout {
+  height: 100%;
+  background-color: $color-white;
+}
+
+.layout__body {
+  min-width: $breakpoint-mobile;
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font: var(--font-text-regular);
+  color: $color-dark;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.layout__main {
+  flex-grow: 1;
+}

@@ -1,4 +1,29 @@
 // Vendor
 // ---------------------------------
+@use "vendor/swiper";
 
-@import "vendor/normalize";
+// Global
+// ---------------------------------
+
+@use "./global/reboot";
+@use "./global/fonts";
+@use "./global/variables";
+@use "./global/media";
+@use "./global/mixins";
+
+// Utils
+// ---------------------------------
+
+@use "./utils/layout";
+@use "./utils/visually-hidden";
+@use "./utils/container";
+
+// Components / User Interface
+// ---------------------------------
+
+//@use "./components/logo";
+
+// Components / Blocks
+// ---------------------------------
+
+@use "./components/header";
