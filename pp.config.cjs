@@ -12,7 +12,7 @@ const indexSections = [
 ]
 
 const VIEWPORTS = {
-  'desktop': {"label": "desktop", "width": 1366, "height": 800},
+  'desktop': {"label": "desktop", "width": 1440, "height": 800},
   'tablet': {"label": "tablet", "width": 768, "height": 1024},
   'mobile': {"label": "mobile", "width": 320, "height": 480}
 };
@@ -50,7 +50,7 @@ module.exports = {
     },
     {
       "label": "desktop",
-      "width": 1366,
+      "width": 1440,
       "height": 800,
     }
   ],

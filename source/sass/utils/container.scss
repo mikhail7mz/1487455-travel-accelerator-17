@@ -5,16 +5,14 @@
   width: $breakpoint-mobile;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 var(--page-offset);
 
   @media #{$not-mobile} {
     width: $breakpoint-tablet;
-    padding: 0 45px;
   }
 
   @media #{$desktop-only} {
     width: $breakpoint-desktop;
-    padding: 0 120px;
   }
 }
 

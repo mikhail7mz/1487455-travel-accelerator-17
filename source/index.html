@@ -1,31 +1,106 @@
 <!DOCTYPE html>
-<html lang="ru" data-validate="html">
-
+<html class="layout" lang="ru" data-validate="html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUPERGYM</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>TRAVEL</title>
     <link rel="stylesheet" href="sass/style.scss">
+    <link rel="preload" href="fonts/montserrat-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   </head>
-
-  <body class="page-body">
-    <!-- пример использования спрайта -->
-    <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-    <svg>
-      <use href="/__spritemap#sprite-user"></use>
-    </svg>
-    <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="header">header</div>
-    <div data-test="hero">hero</div>
-    <div data-test="tours">tours</div>
-    <div data-test="training">training</div>
-    <div data-test="about">about</div>
-    <div data-test="reviews">reviews</div>
-    <div data-test="adv">adv</div>
-    <div data-test="gallery">gallery</div>
-    <div data-test="form">form</div>
-    <div data-test="footer">footer</div>
+  <body class="layout__body">
+    <header class="header" data-test="header" data-header="true">
+      <div class="container">
+        <div class="header__body">
+          <button class="header__menu-toggle" type="button" data-menu-toggle="true">
+            <span class="visually-hidden">Кнопка открытия меню.</span>
+          </button>
+          <div class="header__logo">
+            <span class="visually-hidden">Логотип с картинкой в виде двух схематичных гор в кружочке и текстом: LifeTour, организация походов в горы</span>
+            <svg class="logo" width="142" height="42" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <use href="/__spritemap#sprite-logo"/>
+            </svg>
+          </div>
+          <div class="header__menu" data-menu="true">
+            <ul class="header__menu-list">
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">Туры</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">Обучение</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">О нас</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">Отзывы</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">Фотографии</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="header__menu-link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <a class="header__phone" href="tel:+78000000000">8 800 000-00-00</a>
+        </div>
+      </div>
+    </header>
+    <main class="layout__main">
+      <h1 class="visually-hidden">LifeTour, организация походов в горы.</h1>
+      <section class="hero" data-test="hero">
+        <div class="container">
+          hero
+        </div>
+      </section>
+      <section class="tours" data-test="tours">
+        <div class="container">
+          tours
+        </div>
+      </section>
+      <section class="training" data-test="training">
+        <div class="container">
+          training
+        </div>
+      </section>
+      <section class="about" data-test="about">
+        <div class="container">
+          about
+        </div>
+      </section>
+      <section class="reviews" data-test="reviews">
+        <div class="container">
+          reviews
+        </div>
+      </section>
+      <section class="advantages" data-test="adv">
+        <div class="container">
+          advantages
+        </div>
+      </section>
+      <section class="gallery" data-test="gallery">
+        <div class="container">
+          gallery
+        </div>
+      </section>
+      <section class="form" data-test="form">
+        <div class="container">
+          form
+        </div>
+      </section>
+    </main>
+    <footer class="footer" data-test="footer">
+      <div class="container">
+        footer
+      </div>
+    </footer>
     <script type="module" src="js/main.js"></script>
   </body>
-
 </html>
