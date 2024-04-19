@@ -33,7 +33,7 @@
 
   @media #{$desktop-only} {
     display: flex;
-    gap: 0;
+    gap: 30px;
   }
 }
 
@@ -140,7 +140,7 @@
 
 .header__menu-link {
   display: block;
-  margin: -3px -6px;
+  margin: -3px -5px;
   padding: 2px 4px;
   border: 1px solid transparent;
   font: var(--font-button-big);
@@ -152,6 +152,7 @@
 
   @media #{$desktop-only} {
     font: var(--font-input-nav);
+    letter-spacing: normal;
     text-transform: none;
   }
 
