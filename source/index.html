@@ -30,22 +30,22 @@
           <div class="header__menu" data-menu="true">
             <ul class="header__menu-list">
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#">Туры</a>
+                <a class="header__menu-link" href="#tours">Туры</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#">Обучение</a>
+                <a class="header__menu-link" href="#training">Обучение</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#">О нас</a>
+                <a class="header__menu-link" href="#about">О нас</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#">Отзывы</a>
+                <a class="header__menu-link" href="#reviews">Отзывы</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#">Фотографии</a>
+                <a class="header__menu-link" href="#gallery">Фотографии</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#">Контакты</a>
+                <a class="header__menu-link" href="#contacts">Контакты</a>
               </li>
             </ul>
           </div>
@@ -55,52 +55,144 @@
     </header>
     <main class="layout__main">
       <h1 class="visually-hidden">LifeTour, организация походов в горы.</h1>
-      <section class="hero" data-test="hero">
-        <div class="container">
-          hero
+      <section class="hero" data-slider="true" data-test="hero">
+        <h2 class="visually-hidden">Популярный походы.</h2>
+        <div class="swiper">
+          <ul class="hero__slide-list swiper-wrapper">
+            <li class="hero__slide swiper-slide">
+              <div class="container">
+                <div class="hero__slide-body">
+                  <div class="hero__content-aria">
+                    <h3>Захватывающие вершины&nbsp;Кавказа</h3>
+                    <p>В сопровождении опытных гидов вы пройдёте через&nbsp;потрясающие ландшафты и совершите восход на&nbsp;вершину горы Чегет.</p>
+                  </div>
+                  <a class="hero__link button" href="#">Смотреть тур</a>
+                  <ul class="hero__details">
+                    <li class="hero__details-item hero__details-item--duration">6 дней/5 ночей</li>
+                    <li class="hero__details-item hero__details-item--level">Высокая сложность</li>
+                  </ul>
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1440px)" srcset="img/hero-slider/caucasus--desktop@1x.webp 1x, img/hero-slider/caucasus--desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/hero-slider/caucasus--tablet@1x.webp 1x, img/hero-slider/caucasus--tablet@2x.webp 2x">
+                    <source type="image/webp" srcset="img/hero-slider/caucasus--mobile@1x.webp 1x, img/hero-slider/caucasus--mobile@2x.webp 2x">
+                    <source type="image/jpg" media="(min-width: 1440px)" srcset="img/hero-slider/caucasus--desktop@1x.jpg 1x, img/hero-slider/caucasus--desktop@2x.jpg 2x">
+                    <source type="image/jpg" media="(min-width: 768px)" srcset="img/hero-slider/caucasus--tablet@1x.jpg 1x, img/hero-slider/caucasus--tablet@2x.jpg 2x">
+                    <img class="hero__image" src="img/hero-slider/caucasus--mobile@1x.jpg" srcset="img/hero-slider/caucasus--mobile@1x.jpg 1x, images/caucasus--mobile@2x.jpg 2x" width="320" height="360" alt="Захватывающие вершины Кавказа." loading="lazy">
+                  </picture>
+                </div>
+              </div>
+            </li>
+            <li class="hero__slide swiper-slide">
+              <div class="container">
+                <div class="hero__slide-body">
+                  <div class="hero__content-aria">
+                    <h3>Невероятная природа Камчатки</h3>
+                    <p>Незабываемое приключение, во&nbsp;время которого вы отправитесь в&nbsp;путешествие по одному из самых нетронутых уголков дикой природы&nbsp;в мире.</p>
+                  </div>
+                  <a class="hero__link button" href="#">Смотреть тур</a>
+                  <ul class="hero__details">
+                    <li class="hero__details-item hero__details-item--duration">9 дней/10 ночей</li>
+                    <li class="hero__details-item hero__details-item--level">Средняя сложность</li>
+                  </ul>
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1440px)" srcset="img/hero-slider/kamchatka--desktop@1x.webp 1x, img/hero-slider/kamchatka--desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/hero-slider/kamchatka--tablet@1x.webp 1x, img/hero-slider/kamchatka--tablet@2x.webp 2x">
+                    <source type="image/webp" srcset="img/hero-slider/kamchatka--mobile@1x.webp 1x, img/hero-slider/kamchatka--mobile@2x.webp 2x">
+                    <source type="image/jpg" media="(min-width: 1440px)" srcset="img/hero-slider/kamchatka--desktop@1x.jpg 1x, img/hero-slider/kamchatka--desktop@2x.jpg 2x">
+                    <source type="image/jpg" media="(min-width: 768px)" srcset="img/hero-slider/kamchatka--tablet@1x.jpg 1x, img/hero-slider/kamchatka--tablet@2x.jpg 2x">
+                    <img class="hero__image" src="img/hero-slider/kamchatka--mobile@1x.jpg" srcset="img/hero-slider/kamchatka--mobile@1x.jpg 1x, images/kamchatka--mobile@2x.jpg 2x" width="320" height="360" alt="Невероятная природа Камчатки." loading="lazy">
+                  </picture>
+                </div>
+              </div>
+            </li>
+            <li class="hero__slide swiper-slide">
+              <div class="container">
+                <div class="hero__slide-body">
+                  <div class="hero__content-aria">
+                    <h3>Магические пейзажи Алтайского Края</h3>
+                    <p>Алтайский трекинг-тур — это&nbsp;захватывающее приключение с&nbsp;посещением магических и захватывающих дух ландшафтов Алтайских гор.</p>
+                  </div>
+                  <a class="hero__link button" href="#">Смотреть тур</a>
+                  <ul class="hero__details">
+                    <li class="hero__details-item hero__details-item--duration">8 дней/7 ночей</li>
+                    <li class="hero__details-item hero__details-item--level">Лёгкая сложность</li>
+                  </ul>
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1440px)" srcset="img/hero-slider/altai--desktop@1x.webp 1x, img/hero-slider/altai--desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/hero-slider/altai--tablet@1x.webp 1x, img/hero-slider/altai--tablet@2x.webp 2x">
+                    <source type="image/webp" srcset="img/hero-slider/altai--mobile@1x.webp 1x, img/hero-slider/altai--mobile@2x.webp 2x">
+                    <source type="image/jpg" media="(min-width: 1440px)" srcset="img/hero-slider/altai--desktop@1x.jpg 1x, img/hero-slider/altai--desktop@2x.jpg 2x">
+                    <source type="image/jpg" media="(min-width: 768px)" srcset="img/hero-slider/altai--tablet@1x.jpg 1x, img/hero-slider/altai--tablet@2x.jpg 2x">
+                    <img class="hero__image" src="img/hero-slider/altai--mobile@1x.jpg" srcset="img/hero-slider/altai--mobile@1x.jpg 1x, images/altai--mobile@2x.jpg 2x" width="320" height="360" alt="Магические пейзажи Алтайского Края." loading="lazy">
+                  </picture>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="container container--relative">
+            <div class="hero__pagination">
+              <button class="hero__pagination-toggle" type="button">
+                <span class="visually-hidden">Слайд 1.</span>
+              </button>
+              <button class="hero__pagination-toggle" type="button">
+                <span class="visually-hidden">Слайд 2.</span>
+              </button>
+              <button class="hero__pagination-toggle" type="button">
+                <span class="visually-hidden">Слайд 3.</span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="tours" data-test="tours">
+      <section class="tours" id="tours" data-test="tours">
         <div class="container">
-          tours
+          <h2 class="tours__heeading">Ближайшие туры</h2>
         </div>
       </section>
-      <section class="training" data-test="training">
+      <section class="training" id="training" data-test="training">
         <div class="container">
-          training
+          <h2 class="training__heading">Обучение</h2>
         </div>
       </section>
-      <section class="about" data-test="about">
+      <section class="about" id="about" data-test="about">
         <div class="container">
-          about
+          <h2 class="about__heading">О нас</h2>
         </div>
       </section>
-      <section class="reviews" data-test="reviews">
+      <section class="reviews" id="reviews" data-test="reviews">
         <div class="container">
-          reviews
+          <h2 class="reviews__heading">Отзывы</h2>
         </div>
       </section>
       <section class="advantages" data-test="adv">
         <div class="container">
-          advantages
+          <h2 class="advantages__heading">Преимущества</h2>
         </div>
       </section>
-      <section class="gallery" data-test="gallery">
+      <section class="gallery" id="gallery" data-test="gallery">
         <div class="container">
-          gallery
+          <h2 class="gallery__heading">Фотогалерея</h2>
         </div>
       </section>
       <section class="form" data-test="form">
         <div class="container">
-          form
+          <h2 class="form__heading">Остались вопросы?</h2>
         </div>
       </section>
     </main>
-    <footer class="footer" data-test="footer">
-      <div class="container">
-        footer
-      </div>
-    </footer>
+    <div data-test="footer">
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <h2 class="contacts__heading">Контакты</h2>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          footer
+        </div>
+      </footer>
+    </div>
+
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 100%;
   padding: 15px 0;
   background: $color-effervescent-blue;
@@ -77,6 +78,7 @@
 
   &:disabled {
     background-color: $color-deep-gray;
+    pointer-events: none;
   }
 
   @media #{$not-mobile} {
@@ -174,6 +176,7 @@
 
   &:disabled {
     color: $color-deep-gray;
+    pointer-events: none;
   }
 }
 
@@ -200,6 +203,7 @@
 
   &:disabled {
     color: $color-deep-gray;
+    pointer-events: none;
   }
 
   @media #{$not-mobile} {

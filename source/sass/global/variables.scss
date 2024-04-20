@@ -1,22 +1,18 @@
 @use "../global/media" as *;
 
 $maxdppx: 2;
-
 $font-family-default: Montserrat, Arial, Tahoma, sans-serif;
-
 $color-effervescent-blue: #0266c1;
 $color-deep-blue: #1c3374;
 $color-white: #ffffff;
 $color-black: #000000;
 $color-dark: #2d383f;
 $color-deep-gray: #999999;
-
 $overlay-gradient-slider: linear-gradient(112.1deg, rgba(15, 20, 41, 0.33) 17.23%, rgba(15, 20, 41, 0) 94.93%);
 $overlay-gradient-card: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 22.3%, rgba(0, 0, 0, 0) 60.32%);
 
 :root {
   --page-offset: 15px;
-
   --font-heading-h1: 800 30px/30px #{$font-family-default};
   --font-heading-h2: 800 26px/26px #{$font-family-default};
   --font-heading-h3: 800 22px/22px #{$font-family-default};
@@ -24,50 +20,40 @@ $overlay-gradient-card: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 22.3%, rgba(0, 
   --font-heading-h5: 700 16px/16px #{$font-family-default};
   --font-heading-h6: 600 14px/14px #{$font-family-default};
   --font-heading-h7: 700 14px/16px #{$font-family-default};
-
   --font-text-big: 400 15px/20px #{$font-family-default};
   --font-text-regular: 400 14px/20px #{$font-family-default};
   --font-text-small: 400 12px/18px #{$font-family-default};
   --font-text-extra-small: 400 12px/18px #{$font-family-default};
-
   --font-caption-big: 700 12px/12px #{$font-family-default};
   --font-caption-medium: 500 12px/12px #{$font-family-default};
   --font-caption-small: 300 12px/12px #{$font-family-default};
-
   --font-button-big: 700 14px/14px #{$font-family-default};
   --font-button-regular: 500 16px/16px #{$font-family-default};
   --font-input-nav: 400 14px/14px #{$font-family-default};
 
   @media #{$not-mobile} {
     --page-offset: 45px;
-
     --font-heading-h1: 800 56px/56px #{$font-family-default};
     --font-heading-h2: 800 40px/40px #{$font-family-default};
     --font-heading-h3: 800 25px/25px #{$font-family-default};
     --font-heading-h4: 700 24px/28px #{$font-family-default};
     --font-heading-h5: 700 18px/18px #{$font-family-default};
     --font-heading-h6: 600 16px/16px #{$font-family-default};
-
     --font-text-big: 400 17px/24px #{$font-family-default};
     --font-text-regular: 400 16px/24px #{$font-family-default};
     --font-text-small: 400 14px/22px #{$font-family-default};
-
     --font-caption-big: 700 13px/13px #{$font-family-default};
-
     --font-button-big: 700 16px/16px #{$font-family-default};
   }
 
   @media #{$desktop-only} {
     --page-offset: 120px;
-
     --font-heading-h1: 800 77px/77px #{$font-family-default};
     --font-heading-h2: 800 55px/55px #{$font-family-default};
     --font-heading-h3: 800 35px/35px #{$font-family-default};
     --font-heading-h5: 700 21px/21px #{$font-family-default};
     --font-heading-h6: 600 18px/18px #{$font-family-default};
-
     --font-text-extra-small: 400 12px/16px #{$font-family-default};
-
     --font-input-nav: 400 16px/16px #{$font-family-default};
   }
 }

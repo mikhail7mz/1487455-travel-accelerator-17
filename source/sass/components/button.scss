@@ -1,0 +1,39 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+@use "../global/mixins" as *;
+
+.button {
+  display: block;
+  padding: 20px;
+  background: $color-effervescent-blue;
+  font: var(--font-button-regular);
+  text-decoration: none;
+  text-align: center;
+  color: $color-white;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    background: $color-white;
+    color: $color-deep-blue;
+    outline: none;
+  }
+
+  &:hover {
+    background: $color-white;
+    color: $color-deep-blue;
+    box-shadow: inset 0 0 0 1px $color-deep-blue;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: $color-deep-blue;
+    color: $color-white;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background: $color-deep-gray;
+    color: $color-white;
+    pointer-events: none;
+  }
+}

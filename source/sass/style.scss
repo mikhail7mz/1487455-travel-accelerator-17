@@ -7,7 +7,6 @@
 
 @use "./global/reboot";
 @use "./global/fonts";
-@use "./global/variables";
 @use "./global/media";
 @use "./global/mixins";
 
@@ -21,6 +20,7 @@
 // Components / User Interface
 // ---------------------------------
 
+@use "./components/button";
 @use "./components/logo";
 
 // Components / Blocks
