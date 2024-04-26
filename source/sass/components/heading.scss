@@ -1,0 +1,5 @@
+@use "../global/mixins" as *;
+
+.heading {
+  @include heading;
+}

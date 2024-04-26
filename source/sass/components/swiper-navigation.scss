@@ -1,0 +1,71 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+@use "../global/mixins" as *;
+
+.swiper-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  width: 78px;
+  height: 35px;
+}
+
+.swiper-navigation__toggle {
+  display: grid;
+  padding: 0;
+  border: none;
+  background-color: $color-effervescent-blue;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    width: 14px;
+    height: 9px;
+    margin: auto;
+    background-color: $color-white;
+    mask-image: url("/__spritemap#sprite-slider-toggle-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    content: "";
+  }
+
+  &:focus {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &::before {
+      background-color: $color-deep-blue;
+    }
+  }
+
+  &:hover {
+    background: none;
+    border: 1px solid $color-deep-blue;
+    cursor: pointer;
+
+    &::before {
+      background-color: $color-deep-blue;
+    }
+  }
+
+  &:active {
+    background: $color-deep-blue;
+    border: none;
+
+    &::before {
+      background-color: $color-white;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $color-deep-gray;
+    pointer-events: none;
+  }
+}
+
+.swiper-navigation__toggle[data-prev] {
+  transform: scaleX(-1);
+}

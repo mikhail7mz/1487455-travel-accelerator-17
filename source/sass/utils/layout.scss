@@ -1,5 +1,6 @@
 @use "../global/variables" as *;
 @use "../global/media" as *;
+@use "../global/mixins" as *;
 
 .layout {
   height: 100%;
@@ -16,6 +17,47 @@
   color: $color-dark;
   overflow: hidden;
   overflow-y: auto;
+  @include multiple-background-image((
+    "mobile": (
+      ("name": "clouds-1", "extention": "png"),
+    ),
+    "tablet": (
+      ("name": "clouds-1", "extention": "png"),
+      ("name": "clouds-2", "extention": "png"),
+      ("name": "clouds-3", "extention": "png"),
+    ),
+    "desktop": (
+      ("name": "clouds-1", "extention": "png"),
+      ("name": "clouds-2", "extention": "png"),
+      ("name": "clouds-3", "extention": "png"),
+    ),
+  ), $maxdppx);
+  background-repeat: no-repeat;
+  background-position: left calc(50% + 192px) top 678px;
+  background-size: 346px 596px;
+
+  @media #{$not-mobile} {
+    background-position:
+      left calc(50% + 318px) top 1024px,
+      left calc(50% + 339px) top 2265px,
+      center top 4048px;
+    background-size:
+      718px 1630px,
+      840px 280px,
+      1440px 996px;
+  }
+
+  @media #{$desktop-only} {
+    background-position:
+      left calc(50% + 1118px) top 800px,
+      left calc(50% + 507px) top 2252px,
+      center top 3543px;
+    background-size:
+      2000px 1630px,
+      840px 280px,
+      2091px 447px;
+
+  }
 }
 
 .layout__main {

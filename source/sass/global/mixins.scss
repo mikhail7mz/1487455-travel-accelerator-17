@@ -1,6 +1,39 @@
 @use "sass:list" as *;
+@use "sass:map";
 @use "./variables" as *;
 @use "./media" as *;
+
+@mixin heading() {
+  margin-top: 0;
+  font: var(--font-heading-h3);
+
+  &[data-text] {
+    position: relative;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @media #{$not-mobile} {
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+
+    @media #{$desktop-only} {
+      padding-top: 19px;
+      padding-bottom: 1px;
+    }
+  }
+
+  &[data-text]::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font: var(--font-heading-h2);
+    text-align: inherit;
+    opacity: 0.03;
+    content: attr(data-text);
+  }
+}
 
 /// Миксин для добавления адаптивной фоновой картинки
 /// формат имени файла:
@@ -14,19 +47,7 @@
 
 @mixin bg-image($name, $extention, $maxdppx: 1, $viewports, $preimage: "", $postimage: "") {
   @each $viewport in $viewports {
-    $media-query: null;
-
-    @if $viewport == mobile { /* stylelint-disable-line at-rule-no-unknown */
-      $media-query: all;
-    }
-
-    @if $viewport == tablet { /* stylelint-disable-line at-rule-no-unknown */
-      $media-query: $not-mobile;
-    }
-
-    @if $viewport == desktop { /* stylelint-disable-line at-rule-no-unknown */
-      $media-query: $desktop-only;
-    }
+    $media-query: getMediaQuery($viewport);
 
     $dppx: 1;
 
@@ -67,5 +88,93 @@
     #{$class-name} & {
       background-image: $url;
     }
+  }
+}
+
+/// Миксин для добавления множественного фона из нескольких картинок
+/// формат имени файла:
+/// name--viewport@dppx.extention
+/// @param {List}   $images    - список картинок формата ("name": "имя", "extention": "формат файла")
+/// @param {Number} $maxdppx   - максимальная плотность пикселей для ретина дисплеев
+/// @param {String} $preimage  - верхний слой картинки, например полупрозрачная маска
+/// @param {String} $postimage - нижний слой картинки, например градиентная подложка прозрачной картинки
+@mixin multiple-background-image($images, $maxdppx: 1, $preimage: "", $postimage: "") {
+  @each $viewport in map.keys($images) {
+    $media-query: getMediaQuery($viewport);
+
+    $dppx: 1;
+
+    @while $dppx <= $maxdppx { /* stylelint-disable-line at-rule-no-unknown */
+      @if $dppx == 1 { /* stylelint-disable-line at-rule-no-unknown */
+        @media #{$media-query} {
+          @include bg-multiple-image-choose-format(map.get($images, $viewport), $viewport, $dppx, $preimage, $postimage);
+        }
+      }
+
+      @else { /* stylelint-disable-line at-rule-no-unknown */
+        @media #{$media-query} and (min-resolution: #{$dppx}dppx) {
+          @include bg-multiple-image-choose-format(map.get($images, $viewport), $viewport, $dppx, $preimage, $postimage);
+        }
+      }
+
+      $dppx: $dppx + 1;
+    }
+  }
+}
+
+/// Служебный миксин для миксина bg-image
+@mixin bg-multiple-image-choose-format($images, $viewport, $dppx, $preimage, $postimage) {
+  $formats: original, webp;
+
+  @each $format in $formats {
+    $class-name: if(($format == webp) or ($format == avif), ".#{$format}", "");
+    $url: getMultipleUrl($images, $viewport, $dppx, $format);
+
+    @if $preimage != "" { /* stylelint-disable-line at-rule-no-unknown */
+      $url: $preimage, $url;
+    }
+
+    @if $postimage != "" { /* stylelint-disable-line at-rule-no-unknown */
+      $url: $url, $postimage;
+    }
+
+    #{$class-name} & {
+      background-image: $url;
+    }
+  }
+}
+
+/// Служебная функция для миксина multiple-background-image
+@function getMultipleUrl($images, $viewport, $dppx, $format) {
+  $url: null;
+
+  @each $image in $images {
+    $name: map.get($image, "name");
+    $extention: map.get($image, "extention");
+
+    @if $format == original {
+      $url: $url, url("../img/#{$name}--#{$viewport}@#{$dppx}x.#{$extention}");
+    }
+
+    @else {
+      $url: $url, url("../img/#{$name}--#{$viewport}@#{$dppx}x.#{$format}");
+    }
+  }
+
+  @return $url;
+}
+
+/// Служебная функция для миксина bg-image и multiple-background-image
+@function getMediaQuery($viewport) {
+  @if $viewport == mobile { /* stylelint-disable-line at-rule-no-unknown */
+    @return all;
+  }
+
+  @if $viewport == tablet { /* stylelint-disable-line at-rule-no-unknown */
+    @return $not-mobile;
+  }
+
+  @if $viewport == desktop { /* stylelint-disable-line at-rule-no-unknown */
+    @return $desktop-only;
   }
 }

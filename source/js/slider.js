@@ -1,5 +1,4 @@
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
 
 const INTERACTIVE_ELEMENT_TAGS = 'audio, button, canvas, details, iframe, input, select, summary, textarea, video, [accesskey], [contenteditable], [href], [tabindex]';
 
@@ -24,33 +23,14 @@ const onActiveIndexChange = (swiper) => {
   previuosElements.forEach((element) => setTabIndex(element, false));
 };
 
-const parameters = {
-  spaceBetween: 15,
-  modules: [ Pagination ],
-  pagination: {
-    el: '.hero__pagination',
-    bulletElement: 'button',
-    bulletClass: 'hero__pagination-toggle',
-    bulletActiveClass: 'active',
-    clickable: true,
-  },
-  breakpoints: {
-    1440: {
-      allowTouchMove: false,
-    }
-  },
-  on: {
-    init: onInit,
-    activeIndexChange: onActiveIndexChange,
-  },
-};
-
-const initSliderElement = (element) => {
+const initSlider = (querySelector, parameters) => {
+  const element = document.querySelector(querySelector);
   const swiperElement = element.querySelector('.swiper');
+  parameters.on = parameters.on ? parameters.on : {};
+  parameters.on.init = onInit;
+  parameters.on.activeIndexChange = onActiveIndexChange;
   const swiper = new Swiper(swiperElement, parameters);
   swiper.init();
 };
 
-const initSliders = () => document.querySelectorAll('[data-slider]').forEach(initSliderElement);
-
-export {initSliders};
+export {initSlider};

@@ -2,6 +2,10 @@
 @use "../global/media" as *;
 @use "../global/mixins" as *;
 
+.hero {
+  background: transparentize($color-deep-blue, 0.5);
+}
+
 .hero__slide-list {
   margin: 0;
   padding: 0;
@@ -110,6 +114,25 @@
   min-width: 180px;
 }
 
+.hero__photos {
+  display: none;
+  width: 442px;
+  height: 365px;
+  margin: 45px auto 0;
+
+  @media #{$not-mobile} {
+    display: block;
+  }
+
+  @media #{$desktop-only} {
+    position: absolute;
+    top: 187px;
+    left: calc(50% + 190px);
+    width: 410px;
+    height: 459px;
+  }
+}
+
 .hero__details {
   position: absolute;
   bottom: 80px;
@@ -154,6 +177,10 @@
 
 .hero__details-item--level::before {
   mask-image: url("/__spritemap#sprite-level-view");
+}
+
+.hero__slide-body *:last-child {
+  margin-bottom: 0;
 }
 
 .hero__pagination {
