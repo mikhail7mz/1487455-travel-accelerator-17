@@ -19,17 +19,17 @@
   overflow-y: auto;
   @include multiple-background-image((
     "mobile": (
-      ("name": "clouds-1", "extention": "png"),
+      ("name": "layouts/clouds-1", "extention": "png"),
     ),
     "tablet": (
-      ("name": "clouds-1", "extention": "png"),
-      ("name": "clouds-2", "extention": "png"),
-      ("name": "clouds-3", "extention": "png"),
+      ("name": "layouts/clouds-1", "extention": "png"),
+      ("name": "layouts/clouds-2", "extention": "png"),
+      ("name": "layouts/clouds-3", "extention": "png"),
     ),
     "desktop": (
-      ("name": "clouds-1", "extention": "png"),
-      ("name": "clouds-2", "extention": "png"),
-      ("name": "clouds-3", "extention": "png"),
+      ("name": "layouts/clouds-1", "extention": "png"),
+      ("name": "layouts/clouds-2", "extention": "png"),
+      ("name": "layouts/clouds-3", "extention": "png"),
     ),
   ), $maxdppx);
   background-repeat: no-repeat;

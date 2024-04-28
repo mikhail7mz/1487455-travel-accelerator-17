@@ -35,6 +35,65 @@
   }
 }
 
+@mixin social-link($size) {
+  display: block;
+  width: #{$size};
+  height: #{$size};
+  border: 1px solid transparentize($color-dark, 0.7);
+  background: $color-white;
+
+  &::after {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: $color-dark;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    content: "";
+  }
+
+  &:focus {
+    border: none;
+    background: $color-white;
+    outline: none;
+
+    &::after {
+      background-color: $color-dark;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $color-dark;
+    background: $color-white;
+    cursor: pointer;
+
+    &::after {
+      background-color: $color-dark;
+    }
+  }
+
+  &:active {
+    border: 1px solid $color-white;
+    background: $color-effervescent-blue;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &:disabled {
+    border: 1px solid $color-dark;
+    background: $color-white;
+    opacity: 0.3;
+    pointer-events: none;
+
+    &::after {
+      background-color: $color-dark;
+    }
+  }
+}
+
 /// Миксин для добавления адаптивной фоновой картинки
 /// формат имени файла:
 /// name--viewport@dppx.extention

@@ -3,5 +3,268 @@
 @use "../global/mixins" as *;
 
 .training {
-  //
+  padding: 20px 0;
+
+  @media #{$not-mobile} {
+    padding: 40px 0;
+  }
 }
+
+.training p {
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  @media #{$desktop-only} {
+    margin-bottom: 56px;
+  }
+}
+
+.training__heading {
+  margin-bottom: 19px;
+
+  @media #{$not-mobile} {
+    margin-bottom: 26px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 37px;
+  }
+}
+
+.training__subheading {
+  margin: 0;
+  margin-bottom: 25px;
+  font: var(--font-heading-h5);
+
+  @media #{$not-mobile} {
+    margin-bottom: 104px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 23px;
+  }
+}
+
+.training__slider-intro {
+  position: relative;
+  margin-bottom: 25px;
+
+  @media #{$not-mobile} {
+    min-height: 35px;
+    margin-bottom: 30px;
+    padding-right: 93px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 20px;
+  }
+}
+
+.training__slider-title {
+  margin: 0;
+
+  @media #{$not-mobile} {
+    padding-top: 5px;
+  }
+
+  @media #{$desktop-only} {
+    padding-top: 0;
+  }
+}
+
+.training__slider-navigation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+
+  @media #{$not-mobile} {
+    display: grid;
+  }
+}
+
+.training__slider-list {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  list-style-type: none;
+
+  @media #{$desktop-only} {
+    margin-bottom: 56px;
+  }
+}
+
+.training__slider-item {
+  height: auto;
+  padding: 14px;
+  border: 1px solid transparentize($color-effervescent-blue, 0.9);
+  background: $color-white;
+}
+
+.training__image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 15px;
+  object-fit: cover;
+
+  &::after {
+    clear: both;
+    content: "";
+  }
+}
+
+.training__slider-link {
+  float: right;
+  @include social-link(24px);
+
+  &::after {
+    mask-image: url("/__spritemap#sprite-vk-view");
+    mask-size: 14px 8px;
+  }
+}
+
+.training__slider-item h4 {
+  width: min-content;
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 15px;
+  padding-right: 30px;
+  font: var(--font-heading-h7);
+}
+
+.training__slider-item p {
+  margin: 0;
+  font: var(--font-text-extra-small);
+  line-height: 16px;
+}
+
+.training__steps-list {
+  display: grid;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  padding-left: 29px;
+  list-style-type: none;
+
+  @media #{$not-mobile} {
+    padding-left: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 104px 134px;
+  }
+
+  @media #{$desktop-only} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 8px 0 22px;
+    overflow-x: hidden;
+  }
+}
+
+.training__steps-item {
+  flex-shrink: 0;
+  position: relative;
+  display: block;
+  min-height: 25px;
+  padding-left: 34px;
+  padding-right: 10px;
+  font: var(--font-text-small);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 25px 25px;
+
+  &::before {
+    position: absolute;
+    top: 11px;
+    left: -29px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: $color-effervescent-blue;
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    top: 18px;
+    bottom: -43px;
+    left: -23px;
+    display: block;
+    width: 2px;
+    background: $color-effervescent-blue;
+    content: "";
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  @media #{$not-mobile} {
+    &:first-child {
+      order: -2;
+    }
+
+    &:last-child {
+      order: -1;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  @media #{$desktop-only} {
+    width: 253.33px;
+    padding-left: 45px;
+    font: var(--font-text-regular);
+    background-position: left 10px top;
+
+    &:first-child,
+    &:last-child {
+      order: 0;
+    }
+
+    &::before,
+    &::after,
+    &:last-child::after {
+      display: block;
+    }
+
+    &::before {
+      top: 100%;
+      left: 10px;
+    }
+
+    &::after {
+      top: auto;
+      bottom: -8px;
+      left: 17px;
+      height: 2px;
+      width: 100%;
+    }
+
+    &:last-child::after {
+      width: $breakpoint-desktop;
+    }
+  }
+}
+
+.training__steps-item--map {
+  background-image: url("/__spritemap#sprite-map-view");
+}
+
+.training__steps-item--boots {
+  background-image: url("/__spritemap#sprite-boots-view");
+}
+
+.training__steps-item--pine-tree {
+  background-image: url("/__spritemap#sprite-pine-tree-view");
+}
+
+.training__steps-item--mountain {
+  background-image: url("/__spritemap#sprite-mountain-view");
+}
+

@@ -77,6 +77,7 @@
 
 .tours__place {
   flex-shrink: 0;
+  min-width: 90px;
   margin: 0;
   padding: 8px 12px 8px 34px;
   font: var(--font-caption-medium);
