@@ -8,6 +8,7 @@ $color-white: #ffffff;
 $color-black: #000000;
 $color-dark: #2d383f;
 $color-deep-gray: #999999;
+$color-vivid-red: #ff121f;
 $overlay-gradient-slider: linear-gradient(112.1deg, rgba(15, 20, 41, 0.33) 17.23%, rgba(15, 20, 41, 0) 94.93%);
 $overlay-gradient-card: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 22.3%, rgba(0, 0, 0, 0) 60.32%);
 
@@ -30,6 +31,7 @@ $overlay-gradient-card: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 22.3%, rgba(0, 
   --font-button-big: 700 14px/14px #{$font-family-default};
   --font-button-regular: 500 16px/16px #{$font-family-default};
   --font-input-nav: 400 14px/14px #{$font-family-default};
+  --font-input: 400 16px/16px #{$font-family-default};
 
   @media #{$not-mobile} {
     --page-offset: 45px;

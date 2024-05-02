@@ -22,14 +22,14 @@
       ("name": "layouts/clouds-1", "extention": "png"),
     ),
     "tablet": (
-      ("name": "layouts/clouds-1", "extention": "png"),
-      ("name": "layouts/clouds-2", "extention": "png"),
       ("name": "layouts/clouds-3", "extention": "png"),
+      ("name": "layouts/clouds-2", "extention": "png"),
+      ("name": "layouts/clouds-1", "extention": "png"),
     ),
     "desktop": (
-      ("name": "layouts/clouds-1", "extention": "png"),
-      ("name": "layouts/clouds-2", "extention": "png"),
       ("name": "layouts/clouds-3", "extention": "png"),
+      ("name": "layouts/clouds-2", "extention": "png"),
+      ("name": "layouts/clouds-1", "extention": "png"),
     ),
   ), $maxdppx);
   background-repeat: no-repeat;
@@ -38,25 +38,24 @@
 
   @media #{$not-mobile} {
     background-position:
-      left calc(50% + 318px) top 1024px,
-      left calc(50% + 339px) top 2265px,
-      center top 4048px;
+      center top 4048px,
+      left calc(50% + 339px) top 2365px,
+      left calc(50% + 318px) top 1024px;
     background-size:
-      718px 1630px,
+      1440px 996px,
       840px 280px,
-      1440px 996px;
+      718px 1630px;
   }
 
   @media #{$desktop-only} {
     background-position:
-      left calc(50% + 1118px) top 800px,
-      left calc(50% + 507px) top 2252px,
-      center top 3543px;
+      center top 3643px,
+      left calc(50% + 507px) top 2352px,
+      left calc(50% + 1118px) top 800px;
     background-size:
-      2000px 1630px,
+      2091px 447px,
       840px 280px,
-      2091px 447px;
-
+      2000px 1630px;
   }
 }
 

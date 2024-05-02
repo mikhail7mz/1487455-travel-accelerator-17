@@ -3,5 +3,155 @@
 @use "../global/mixins" as *;
 
 .reviews {
-  //
+  padding: 20px 0;
+
+  @media #{$not-mobile} {
+    padding: 40px 0;
+  }
+
+  @media #{$desktop-only} {
+    padding: 100px 0 77px;
+  }
+}
+
+.reviews__intro {
+  position: relative;
+  margin-bottom: 16px;
+
+  @media #{$not-mobile} {
+    min-height: 35px;
+    margin-bottom: 25px;
+    padding-right: 93px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 28px;
+  }
+}
+
+.reviews__heading {
+  margin: 0;
+}
+
+.reviews__heading[data-text] {
+  @media #{$desktop-only} {
+    padding-top: 45px;
+    padding-bottom: 0;
+  }
+}
+
+.reviews__slider {
+  overflow: visible;
+}
+
+.reviews__slider-navigation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+
+  @media #{$not-mobile} {
+    display: grid;
+  }
+}
+
+.reviews__slider-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transition: transform 0.3s ease;
+
+  @media #{$desktop-only} {
+    padding: 10px;
+  }
+}
+
+.reviews__slider-item {
+  flex-shrink: 0;
+  max-width: 100%;
+  padding: 20px;
+  background: $color-white;
+  box-shadow: 0 0 20px transparentize($color-deep-blue, 0.9);
+
+  @media #{$not-mobile} {
+    min-height: 277px;
+    padding: 20px 30px 20px 236px;
+  }
+
+  @media #{$desktop-only} {
+    min-height: 293px;
+    padding: 20px 40px 20px 308px;
+  }
+}
+
+.reviews__image {
+  display: block;
+  width: 250px;
+  height: 169px;
+  margin-bottom: 20px;
+
+  @media #{$not-mobile} {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 186px;
+    height: 237px;
+    margin-bottom: 0;
+  }
+
+  @media #{$desktop-only} {
+    width: 258px;
+    height: 253px;
+  }
+}
+
+.reviews__content-aria {
+  margin-bottom: 15px;
+
+  @media #{$not-mobile} {
+    margin-bottom: 25px;
+    padding-top: 4.5px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 2px;
+    padding-top: 0;
+  }
+}
+
+.reviews__content-aria p {
+  margin: 10px 0;
+  font: var(--font-text-extra-small);
+
+  @media #{$desktop-only} {
+    font: var(--font-text-small);
+  }
+}
+
+.reviews__content-aria *:first-child {
+  margin-top: 0;
+}
+
+.reviews__content-aria *:last-child {
+  margin-bottom: 0;
+}
+
+.reviews__author-name {
+  margin: 0;
+  margin-bottom: 8px;
+  font: var(--font-caption-big);
+
+  @media #{$not-mobile} {
+    margin-bottom: 6px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 8px;
+  }
+}
+
+.reviews__author-info {
+  margin: 0;
+  font: var(--font-caption-small);
 }

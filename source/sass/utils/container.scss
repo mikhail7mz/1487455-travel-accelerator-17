@@ -19,3 +19,7 @@
 .container--relative {
   position: relative;
 }
+
+.container--no-overflow {
+  overflow-x: clip;
+}

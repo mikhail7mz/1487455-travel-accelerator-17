@@ -3,5 +3,158 @@
 @use "../global/mixins" as *;
 
 .form {
-  //
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 638px;
+  padding: 20px 0;
+  background-color: transparentize($color-black, 0.8);
+  @include bg-image(
+    $name: "form/background",
+    $extention: "jpg",
+    $maxdppx: 2,
+    $viewports: (mobile, tablet, desktop)
+  );
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: $breakpoint-mobile 638px;
+
+  @media #{$not-mobile} {
+    min-height: 680px;
+    padding: 40px 0;
+    background-size: $breakpoint-tablet 680px;
+  }
+
+  @media #{$desktop-only} {
+    min-height: 760px;
+    padding: 100px 0;
+    background-size: $breakpoint-desktop 760px;
+  }
+}
+
+.form__body {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0 16px;
+  color: $color-white;
+
+  @media #{$not-mobile} {
+    padding: 0;
+  }
+
+  @media #{$desktop-only} {
+    max-width: 960px;
+  }
+}
+
+.form__intro {
+  @media #{$desktop-only} {
+    margin-bottom: 40px;
+  }
+}
+
+.form__body h2 {
+  @include heading;
+  margin-bottom: 20px;
+  text-align: center;
+
+  @media #{$not-mobile} {
+    margin-bottom: 25px;
+    padding-bottom: 6px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+  }
+}
+
+.form__body p {
+  width: 220px;
+  margin: 0 auto 20px;
+  font: var(--font-text-small);
+  text-align: center;
+
+  @media #{$not-mobile} {
+    width: 100%;
+    margin-bottom: 25px;
+    font: var(--font-text-regular);
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 20px;
+  }
+}
+
+.form__form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media #{$not-mobile} {
+    gap: 11px;
+  }
+
+  @media #{$desktop-only} {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+}
+
+.form__field {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+}
+
+.form__field-input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 16px 14px;
+  border: 1px solid transparentize($color-effervescent-blue, 0.9);
+  font: var(--font-input);
+  color: transparentize($color-dark, 0.5);
+  appearance: textfield;
+
+  @media #{$not-mobile} {
+    height: 56px;
+    padding: 19px 29px;
+  }
+
+  &:focus {
+    border-color: $color-dark;
+    outline: none;
+  }
+
+  &:hover {
+    border-color: $color-effervescent-blue;
+  }
+
+  &.error {
+    border-color: $color-vivid-red;
+  }
+
+  &:disabled {
+    border-color: $color-deep-gray;
+    color: transparentize($color-deep-gray, 0.5);
+    pointer-events: none;
+  }
+}
+
+.form__button {
+  width: 100%;
+  padding: 21px 19px;
+
+  @media #{$not-mobile} {
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  @media #{$desktop-only} {
+    width: 180px;
+    border-radius: 0;
+  }
 }
