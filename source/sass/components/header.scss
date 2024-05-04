@@ -141,42 +141,14 @@
 }
 
 .header__menu-link {
-  display: block;
-  margin: -3px -5px;
-  padding: 2px 4px;
-  border: 1px solid transparent;
   font: var(--font-button-big);
-  color: $color-white;
   letter-spacing: 0.04em;
-  text-decoration: none;
   text-transform: uppercase;
-  overflow-wrap: anywhere;
 
   @media #{$desktop-only} {
     font: var(--font-input-nav);
     letter-spacing: normal;
     text-transform: none;
-  }
-
-  &:focus {
-    border-color: $color-white;
-    outline: none;
-  }
-
-  &:hover {
-    border-color: transparent;
-    border-bottom-color: $color-white;
-    cursor: pointer;
-  }
-
-  &:active {
-    border-color: transparent;
-    color: $color-deep-blue;
-  }
-
-  &:disabled {
-    color: $color-deep-gray;
-    pointer-events: none;
   }
 }
 

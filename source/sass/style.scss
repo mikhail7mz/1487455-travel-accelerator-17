@@ -21,6 +21,8 @@
 // ---------------------------------
 
 @use "./components/button";
+@use "./components/link";
+@use "./components/social";
 @use "./components/swiper-navigation";
 @use "./components/heading";
 @use "./components/logo";
@@ -37,4 +39,5 @@
 @use "./components/advantages";
 @use "./components/gallery";
 @use "./components/form";
+@use "./components/contacts";
 @use "./components/footer";

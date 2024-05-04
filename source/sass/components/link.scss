@@ -1,0 +1,51 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+@use "../global/mixins" as *;
+
+.link {
+  display: block;
+  margin: -3px -5px;
+  padding: 2px 4px;
+  border: 1px solid transparent;
+  color: $color-white;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+
+  &:focus {
+    border-color: $color-white;
+    outline: none;
+  }
+
+  &:hover {
+    border-color: transparent;
+    border-bottom-color: $color-white;
+    cursor: pointer;
+  }
+
+  &:active {
+    border-color: transparent;
+    color: $color-deep-blue;
+  }
+
+  &:disabled {
+    color: $color-deep-gray;
+    pointer-events: none;
+  }
+}
+
+
+.link--dark {
+  color: $color-dark;
+
+  &:focus {
+    border-color: $color-dark;
+  }
+
+  &:hover {
+    border-bottom-color: $color-dark;
+  }
+
+  &:active {
+    color: $color-effervescent-blue;
+  }
+}

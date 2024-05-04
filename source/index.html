@@ -30,22 +30,22 @@
           <div class="header__menu" data-menu="true">
             <ul class="header__menu-list">
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#tours">Туры</a>
+                <a class="header__menu-link link" href="#tours">Туры</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#training">Обучение</a>
+                <a class="header__menu-link link" href="#training">Обучение</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#about">О нас</a>
+                <a class="header__menu-link link" href="#about">О нас</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#reviews">Отзывы</a>
+                <a class="header__menu-link link" href="#reviews">Отзывы</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#gallery">Фотографии</a>
+                <a class="header__menu-link link" href="#gallery">Фотографии</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link" href="#contacts">Контакты</a>
+                <a class="header__menu-link link" href="#contacts">Контакты</a>
               </li>
             </ul>
           </div>
@@ -517,13 +517,90 @@
     </main>
     <div data-test="footer">
       <section class="contacts" id="contacts">
-        <div class="container">
-          <h2 class="contacts__heading heading" data-text="Контакты">Контакты</h2>
+        <div class="container container--relative">
+          <div class="contacts__body">
+            <h2 class="contacts__heading heading" data-text="Контакты">Контакты</h2>
+            <div class="contacts__content-aria">
+              <p>Свяжитесь с нами любым удобным для&nbsp;вас способом или приходите к&nbsp;нам&nbsp;в&nbsp;гости. Мы будем рады поделиться увлекательными историями и подобрать для вас тур.</p>
+            </div>
+            <dl class="contacts__details-list">
+              <div class="contacts__details-item contacts__details-item--phone">
+                <dt class="contacts__details-name">Телефон</dt>
+                <dd class="contacts__details-value">
+                  <a class="contacts__details-link" href="tel:+79837454545">+7 983 745-45-45</a>
+                </dd>
+              </div>
+              <div class="contacts__details-item contacts__details-item--email">
+                <dt class="contacts__details-name">Email</dt>
+                <dd class="contacts__details-value">
+                  <a class="contacts__details-link" href="mailto:info@lifetour.com">info@lifetour.com</a>
+                </dd>
+              </div>
+              <div class="contacts__details-item contacts__details-item--address">
+                <dt class="contacts__details-name">Адрес</dt>
+                <dd class="contacts__details-value">г. Москва, пр-т Мира, д.&nbsp;14, офис&nbsp;101</dd>
+              </div>
+            </dl>
+          </div>
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="img/contacts/map--desktop@1x.webp 1x, img/contacts/map--desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/contacts/map--tablet@1x.webp 1x, img/contacts/map--tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/contacts/map--mobile@1x.webp 1x, img/contacts/map--mobile@2x.webp 2x">
+            <source type="image/jpg" media="(min-width: 1440px)" srcset="img/contacts/map--desktop@1x.jpg 1x, img/contacts/map--desktop@2x.jpg 2x">
+            <source type="image/jpg" media="(min-width: 768px)" srcset="img/contacts/map--tablet@1x.jpg 1x, img/contacts/map--tablet@2x.jpg 2x">
+            <img class="contacts__image" src="img/contacts/map--mobile@1x.jpg" srcset="img/contacts/map--mobile@1x.jpg 1x, img/contacts/map--mobile@2x.jpg 2x" width="320" height="343" alt="Местоположение офиса на карте." loading="lazy">
+          </picture>
         </div>
       </section>
       <footer class="footer">
         <div class="container">
-          footer
+          <div class="footer__body">
+            <div class="footer__logo">
+              <span class="visually-hidden">Логотип с картинкой в виде двух схематичных гор в кружочке и текстом: LifeTour, организация походов в горы</span>
+              <svg class="logo" width="142" height="42" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                <use href="/__spritemap#sprite-logo"/>
+              </svg>
+            </div>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <a class="footer__menu-link link link--dark" href="#tours">Туры</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link link link--dark" href="#training">Обучение</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link link link--dark" href="#about">О нас</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link link link--dark" href="#reviews">Отзывы</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link link link--dark" href="#gallery">Фотографии</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link link link--dark" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+            <a class="footer__phone" href="tel:+78007253232">8 800 725-32-32</a>
+            <ul class="footer__social social">
+              <li class="social__item">
+                <a class="social__link social__link--vk" href="#">
+                  <span class="visually-hidden">Перейти во вконтакте.</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--ok" href="#">
+                  <span class="visually-hidden">Перейти в одноклассники.</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--reddit" href="#">
+                  <span class="visually-hidden">Перейти в реддит.</span>
+                </a>
+              </li>
+            </ul>
+            <a class="footer__link link link--dark" href="#">Политика конфиденциальности</a>
+          </div>
         </div>
       </footer>
     </div>
