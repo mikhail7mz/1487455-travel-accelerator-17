@@ -5,8 +5,8 @@ const parameters = {
   spaceBetween: 15,
   modules: [ Navigation ],
   navigation: {
-    nextEl: '[data-next]',
-    prevEl: '[data-prev]',
+    nextEl: '.tours [data-next]',
+    prevEl: '.tours [data-prev]',
     disabledClass: 'disabled',
   },
   breakpoints: {

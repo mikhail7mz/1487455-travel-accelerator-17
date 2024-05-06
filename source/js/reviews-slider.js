@@ -5,9 +5,10 @@ const parameters = {
   spaceBetween: 30,
   modules: [ Navigation ],
   navigation: {
-    nextEl: '[data-next]',
-    prevEl: '[data-prev]',
+    nextEl: '.reviews [data-next]',
+    prevEl: '.reviews [data-prev]',
     disabledClass: 'disabled',
+    lockClass: 'disabled',
   },
   slideClass: 'reviews__slider-item',
   wrapperClass: 'reviews__slider-list',

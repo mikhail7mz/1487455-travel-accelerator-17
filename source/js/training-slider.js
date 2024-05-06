@@ -6,8 +6,8 @@ const parameters = {
   initialSlide: 2,
   modules: [ Navigation ],
   navigation: {
-    nextEl: '[data-next]',
-    prevEl: '[data-prev]',
+    nextEl: '.training [data-next]',
+    prevEl: '.training [data-prev]',
     disabledClass: 'disabled',
   },
   breakpoints: {
