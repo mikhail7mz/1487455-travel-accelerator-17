@@ -6,6 +6,7 @@ import {initToursSlider} from './tours-slider';
 import {initTrainingSlider} from './training-slider';
 import {initReviewsSlider} from './reviews-slider';
 import {initAdvantagesSlider} from './advantages-slider';
+import {initGallerySlider} from './gallery-slider';
 import {initForm} from './form';
 
 detectWebp();
@@ -16,4 +17,5 @@ initToursSlider();
 initTrainingSlider();
 initReviewsSlider();
 initAdvantagesSlider();
+initGallerySlider();
 initForm();

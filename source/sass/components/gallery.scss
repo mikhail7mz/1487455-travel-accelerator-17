@@ -3,5 +3,165 @@
 @use "../global/mixins" as *;
 
 .gallery {
-  //
+  padding: 20px 0 3px;
+
+  @media #{$not-mobile} {
+    padding-top: 40px;
+  }
+
+  @media #{$desktop-only} {
+    padding-top: 100px;
+  }
+}
+
+.gallery__heading {
+  margin-bottom: 11px;
+
+  @media #{$not-mobile} {
+    margin-bottom: 20px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 26px;
+  }
+}
+
+.gallery__intro {
+  position: relative;
+  margin-bottom: 31px;
+
+  @media #{$not-mobile} {
+    margin-bottom: 21px;
+    padding-right: 93px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 46px;
+    padding-right: 0;
+  }
+}
+
+.gallery__slider-navigation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+
+  @media #{$not-mobile} {
+    display: grid;
+  }
+
+  @media #{$desktop-only} {
+    display: none;
+  }
+}
+
+.gallery__content-aria {
+  @media #{$not-mobile} {
+    width: 420px;
+  }
+
+  @media #{$desktop-only} {
+    width: 606px;
+  }
+}
+
+.gallery__content-aria p {
+  margin: 0;
+  font: var(--font-text-small);
+
+  @media #{$desktop-only} {
+    font: var(--font-text-regular);
+  }
+}
+
+.gallery__slider {
+  margin: 0 calc(var(--page-offset) * -1);
+}
+
+.gallery__slider-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @media #{$desktop-only} {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
+
+.gallery__image {
+  display: block;
+}
+
+.gallery__slider-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+
+  @media #{$mobile-only} {
+    &:nth-child(2n-1) {
+      width: 158px;
+    }
+
+    &:nth-child(2n) {
+      width: 157px;
+    }
+  }
+
+  @media #{$tablet-only} {
+    &:nth-child(3n-2),
+    &:nth-child(3n) {
+      width: 253px;
+    }
+
+    &:nth-child(3n-1) {
+      width: 252px;
+    }
+  }
+
+  @media #{$desktop-only} {
+    width: 284px;
+  }
+}
+
+.gallery__image {
+  width: 100%;
+}
+
+.gallery__picture:first-child .gallery__image {
+  height: 135px;
+
+  @media #{$not-mobile} {
+    height: 210px;
+  }
+
+  @media #{$desktop-only} {
+    height: 233px;
+  }
+}
+
+.gallery__picture:last-child .gallery__image {
+  height: 125px;
+
+  @media #{$not-mobile} {
+    height: 202px;
+  }
+
+  @media #{$desktop-only} {
+    height: 223px;
+  }
+}
+
+.gallery__picture:only-child .gallery__image {
+  height: 266px;
+
+  @media #{$not-mobile} {
+    height: 418px;
+  }
+
+  @media #{$desktop-only} {
+    height: 463px;
+  }
 }
