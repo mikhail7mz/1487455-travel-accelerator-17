@@ -7,10 +7,11 @@
   padding: 20px;
   border: none;
   background: $color-effervescent-blue;
-  font: var(--font-button-regular);
+  font: var(--font-button-regular, inherit);
   text-decoration: none;
   text-align: center;
   color: $color-white;
+  overflow-wrap: anywhere;
   -webkit-tap-highlight-color: transparent;
 
   &:focus {

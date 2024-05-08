@@ -39,6 +39,7 @@
 
 .contacts__content-aria {
   margin-bottom: 30px;
+  overflow-wrap: anywhere;
 
   @media #{$not-mobile} {
     width: 480px;
@@ -52,26 +53,26 @@
 
 .contacts__content-aria p {
   margin: 0;
-  font: var(--font-text-regular);
+  font: var(--font-text-regular, inherit);
 }
 
 .contacts__details-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 30px;
   width: 215px;
   margin: 0;
   margin-bottom: 30px;
 
   @media #{$not-mobile} {
-    flex-direction: row;
-    gap: 40px;
-    width: auto;
+    grid-template-columns: 179px 184px 290px;
+    gap: 15px;
+    width: calc(100% + 2px);
+    margin-right: -2px;
     margin-bottom: 40px;
   }
 
   @media #{$desktop-only} {
-    flex-direction: column;
+    grid-template-columns: none;
     gap: 35px;
     margin-bottom: 0;
   }
@@ -83,6 +84,7 @@
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 22px 22px;
+  overflow-wrap: anywhere;
 
   @media #{$not-mobile} {
     max-width: 288px;
@@ -112,7 +114,7 @@
 
 .contacts__details-name {
   margin-bottom: 8px;
-  font: var(--font-heading-h6);
+  font: var(--font-heading-h6, inherit);
 
   @media #{$not-mobile} {
     margin-bottom: 6px;
@@ -125,40 +127,20 @@
 
 .contacts__details-value,
 .contacts__details-link {
-  margin: 0;
-  font: var(--font-text-regular);
+  font: var(--font-text-regular, inherit);
+  color: $color-dark;
 
   @media #{$not-mobile} {
-    font: var(--font-text-small);
+    font: var(--font-text-small, inherit);
   }
 
   @media #{$desktop-only} {
-    font: var(--font-text-regular);
+    font: var(--font-text-regular, inherit);
   }
 }
 
-.contacts__details-link {
-  color: $color-dark;
-  text-decoration: none;
-
-  &:focus {
-    color: $color-effervescent-blue;
-    outline: none;
-  }
-
-  &:hover {
-    color: transparentize($color-effervescent-blue, 0.9);
-    cursor: pointer;
-  }
-
-  &:active {
-    color: $color-deep-blue;
-  }
-
-  &:disabled {
-    color: $color-deep-gray;
-    pointer-events: none;
-  }
+.contacts__details-value {
+  margin: 0;
 }
 
 .contacts__image {
@@ -166,7 +148,7 @@
   width: 320px;
   max-width: none;
   height: 343px;
-  margin: 0 calc(var(--page-offset) * -1);
+  margin: 0 calc(var(--page-offset, 0) * -1);
 
   @media #{$not-mobile} {
     width: 768px;

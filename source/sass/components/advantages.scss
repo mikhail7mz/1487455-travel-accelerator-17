@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../global/variables" as *;
 @use "../global/media" as *;
 @use "../global/mixins" as *;
@@ -59,13 +60,15 @@
 .advantages__slider-item {
   flex-shrink: 0;
   padding: 19px 9px;
-  border: 1px solid transparentize($color-effervescent-blue, 0.9);
+  border: 1px solid color.adjust($color-effervescent-blue, $alpha: -0.9);
   text-align: center;
   background: $color-white;
+  overflow-wrap: anywhere;
 
   @media #{$not-mobile} {
     max-width: 324px;
     min-height: 340px;
+    height: auto;
     padding: 29px 19px;
   }
 
@@ -133,7 +136,7 @@
   margin: 0;
   margin-bottom: 15px;
   padding: 0 15px;
-  font: var(--font-heading-h6);
+  font: var(--font-heading-h6, inherit);
 
   @media #{$not-mobile} {
     padding: 0;
@@ -142,7 +145,7 @@
 
 .advantages__slider-item p {
   margin: 0;
-  font: var(--font-text-small);
+  font: var(--font-text-small, inherit);
 }
 
 .advantages__slider-navigation {

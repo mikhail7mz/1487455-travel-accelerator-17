@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../global/variables" as *;
 @use "../global/media" as *;
 @use "../global/mixins" as *;
@@ -8,13 +9,15 @@
   justify-content: center;
   min-height: 638px;
   padding: 20px 0;
-  background-color: transparentize($color-black, 0.8);
+  background-color: color.adjust($color-black, $alpha: -0.8);
+
   @include bg-image(
     $name: "form/background",
     $extention: "jpg",
     $maxdppx: 2,
     $viewports: (mobile, tablet, desktop)
   );
+
   background-repeat: no-repeat;
   background-position: center top;
   background-size: $breakpoint-mobile 638px;
@@ -48,6 +51,8 @@
 }
 
 .form__intro {
+  overflow-wrap: anywhere;
+
   @media #{$desktop-only} {
     margin-bottom: 40px;
   }
@@ -55,6 +60,7 @@
 
 .form__body h2 {
   @include heading;
+
   margin-bottom: 20px;
   text-align: center;
 
@@ -72,13 +78,13 @@
 .form__body p {
   width: 220px;
   margin: 0 auto 20px;
-  font: var(--font-text-small);
+  font: var(--font-text-small, inherit);
   text-align: center;
 
   @media #{$not-mobile} {
     width: 100%;
     margin-bottom: 25px;
-    font: var(--font-text-regular);
+    font: var(--font-text-regular, inherit);
   }
 
   @media #{$desktop-only} {
@@ -100,7 +106,6 @@
     flex-direction: row;
     gap: 30px;
   }
-
 }
 
 .form__field {
@@ -114,14 +119,19 @@
   width: 100%;
   height: 50px;
   padding: 16px 14px;
-  border: 1px solid transparentize($color-effervescent-blue, 0.9);
-  font: var(--font-input);
-  color: transparentize($color-dark, 0.5);
+  border: 1px solid color.adjust($color-effervescent-blue, $alpha: -0.9);
+  font: var(--font-input, inherit);
+  color: color.adjust($color-dark, $alpha: -0.5);
   appearance: textfield;
 
   @media #{$not-mobile} {
     height: 56px;
     padding: 19px 29px;
+  }
+
+  &::placeholder {
+    font: var(--font-input, inherit);
+    color: color.adjust($color-dark, $alpha: -0.5);
   }
 
   &:focus {
@@ -133,15 +143,15 @@
     border-color: $color-effervescent-blue;
   }
 
-  &.error {
-    border-color: $color-vivid-red;
-  }
-
   &:disabled {
     border-color: $color-deep-gray;
-    color: transparentize($color-deep-gray, 0.5);
+    color: color.adjust($color-deep-gray, $alpha: -0.5);
     pointer-events: none;
   }
+}
+
+.form__field-input.error {
+  border-color: $color-vivid-red;
 }
 
 .form__button {

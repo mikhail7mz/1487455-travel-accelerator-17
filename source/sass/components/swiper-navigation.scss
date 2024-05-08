@@ -30,7 +30,7 @@
   }
 
   &:focus {
-    background: none;
+    background: $color-white;
     border: none;
     outline: none;
     cursor: pointer;
@@ -41,7 +41,7 @@
   }
 
   &:hover {
-    background: none;
+    background: $color-white;
     border: 1px solid $color-deep-blue;
     cursor: pointer;
 

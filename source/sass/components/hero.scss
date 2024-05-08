@@ -1,9 +1,10 @@
+@use "sass:color";
 @use "../global/variables" as *;
 @use "../global/media" as *;
 @use "../global/mixins" as *;
 
 .hero {
-  background: transparentize($color-deep-blue, 0.5);
+  background: color.adjust($color-deep-blue, $alpha: -0.5);
 }
 
 .hero__slide-list {
@@ -67,6 +68,7 @@
   margin-bottom: 60px;
   color: $color-white;
   text-align: center;
+  overflow-wrap: anywhere;
 
   @media #{$not-mobile} {
     margin-bottom: 35px;
@@ -80,10 +82,10 @@
 .hero__content-aria h3 {
   margin: 0;
   margin-bottom: 15px;
-  font: var(--font-heading-h2);
+  font: var(--font-heading-h2, inherit);
 
   @media #{$not-mobile} {
-    font: var(--font-heading-h1);
+    font: var(--font-heading-h1, inherit);
   }
 
   @media #{$desktop-only} {
@@ -94,7 +96,7 @@
 
 .hero__content-aria p {
   margin: 0 auto 15px;
-  font: var(--font-text-big);
+  font: var(--font-text-big, inherit);
 
   @media #{$not-mobile} {
     width: 500px;
@@ -139,7 +141,7 @@
   display: none;
   flex-wrap: wrap;
   gap: 10px;
-  width: 50%;
+  width: 780px;
   margin: 0;
   margin-top: auto;
   padding: 0;
@@ -152,10 +154,12 @@
 
 .hero__details-item {
   position: relative;
+  max-width: calc(50% - 5px);
   padding: 13px 19px 13px 39px;
-  border: 1px solid transparentize($color-white, 0.5);
-  font: var(--font-text-extra-small);
+  border: 1px solid color.adjust($color-white, $alpha: -0.5);
+  font: var(--font-text-extra-small, inherit);
   color: $color-white;
+  overflow-wrap: anywhere;
 
   &::before {
     position: absolute;
@@ -189,20 +193,22 @@
   right: 0;
   z-index: 2;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: start;
   gap: 20px;
   width: 100%;
 
   @media #{$desktop-only} {
-    width: 50%;
+    width: calc(400px + var(--page-offset, 0));
     bottom: 92px;
     justify-content: flex-end;
-    padding-right: var(--page-offset);
+    padding-right: var(--page-offset, 0);
   }
 }
 
 .hero__pagination-toggle {
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
   border: 1px solid $color-white;
@@ -216,7 +222,7 @@
   }
 
   &:focus {
-    outline: 1px solid transparentize($color-white, 0.5);
+    outline: 1px solid color.adjust($color-white, $alpha: -0.5);
     outline-offset: 1px;
   }
 
@@ -226,11 +232,11 @@
   }
 
   &:active {
-    background: transparentize($color-white, 0.5);
+    background: color.adjust($color-white, $alpha: -0.5);
   }
 
   &:disabled {
-    border-color: transparentize($color-white, 0.4);
+    border-color: color.adjust($color-white, $alpha: -0.4);
     pointer-events: none;
   }
 }

@@ -13,10 +13,11 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  font: var(--font-text-regular);
+  font: var(--font-text-regular, inherit);
   color: $color-dark;
   overflow: hidden;
   overflow-y: auto;
+
   @include multiple-background-image((
     "mobile": (
       ("name": "layouts/clouds-1", "extention": "png"),
@@ -32,6 +33,7 @@
       ("name": "layouts/clouds-1", "extention": "png"),
     ),
   ), $maxdppx);
+
   background-repeat: no-repeat;
   background-position: left calc(50% + 192px) top 678px;
   background-size: 346px 596px;
@@ -57,6 +59,10 @@
       840px 280px,
       2000px 1630px;
   }
+}
+
+.layout__body.scroll-locked {
+  overflow: hidden;
 }
 
 .layout__main {

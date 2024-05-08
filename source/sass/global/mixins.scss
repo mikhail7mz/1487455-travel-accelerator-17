@@ -1,11 +1,13 @@
 @use "sass:list" as *;
+@use "sass:color";
 @use "sass:map";
 @use "./variables" as *;
 @use "./media" as *;
 
 @mixin heading() {
   margin-top: 0;
-  font: var(--font-heading-h3);
+  font: var(--font-heading-h3, inherit);
+  overflow-wrap: anywhere;
 
   &[data-text] {
     position: relative;
@@ -28,7 +30,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    font: var(--font-heading-h2);
+    font: var(--font-heading-h2, inherit);
     text-align: inherit;
     opacity: 0.03;
     content: attr(data-text);
@@ -39,7 +41,7 @@
   display: block;
   width: #{$size};
   height: #{$size};
-  border: 1px solid transparentize($color-dark, 0.7);
+  border: 1px solid color.adjust($color-dark, $alpha: -0.7);
   background: $color-white;
 
   &::after {
@@ -94,6 +96,41 @@
   }
 }
 
+/// Служебная функция для миксина multiple-background-image
+@function get-multiple-url($images, $viewport, $dppx, $format) { /* stylelint-disable-line at-rule-no-unknown */
+  $url: null;
+
+  @each $image in $images {
+    $name: map.get($image, "name");
+    $extention: map.get($image, "extention");
+
+    @if $format == original {
+      $url: $url, url("../img/#{$name}--#{$viewport}@#{$dppx}x.#{$extention}");
+    }
+
+    @else {
+      $url: $url, url("../img/#{$name}--#{$viewport}@#{$dppx}x.#{$format}");
+    }
+  }
+
+  @return $url; /* stylelint-disable-line at-rule-no-unknown */
+}
+
+/// Служебная функция для миксина bg-image и multiple-background-image
+@function get-media-query($viewport) { /* stylelint-disable-line at-rule-no-unknown */
+  @if $viewport == mobile { /* stylelint-disable-line at-rule-no-unknown */
+    @return all; /* stylelint-disable-line at-rule-no-unknown */
+  }
+
+  @if $viewport == tablet { /* stylelint-disable-line at-rule-no-unknown */
+    @return $not-mobile; /* stylelint-disable-line at-rule-no-unknown */
+  }
+
+  @if $viewport == desktop { /* stylelint-disable-line at-rule-no-unknown */
+    @return $desktop-only; /* stylelint-disable-line at-rule-no-unknown */
+  }
+}
+
 /// Миксин для добавления адаптивной фоновой картинки
 /// формат имени файла:
 /// name--viewport@dppx.extention
@@ -106,8 +143,7 @@
 
 @mixin bg-image($name, $extention, $maxdppx: 1, $viewports, $preimage: "", $postimage: "") {
   @each $viewport in $viewports {
-    $media-query: getMediaQuery($viewport);
-
+    $media-query: get-media-query($viewport); /* stylelint-disable-line function-no-unknown */
     $dppx: 1;
 
     @while $dppx <= $maxdppx { /* stylelint-disable-line at-rule-no-unknown */
@@ -159,8 +195,7 @@
 /// @param {String} $postimage - нижний слой картинки, например градиентная подложка прозрачной картинки
 @mixin multiple-background-image($images, $maxdppx: 1, $preimage: "", $postimage: "") {
   @each $viewport in map.keys($images) {
-    $media-query: getMediaQuery($viewport);
-
+    $media-query: get-media-query($viewport); /* stylelint-disable-line function-no-unknown */
     $dppx: 1;
 
     @while $dppx <= $maxdppx { /* stylelint-disable-line at-rule-no-unknown */
@@ -187,7 +222,7 @@
 
   @each $format in $formats {
     $class-name: if(($format == webp) or ($format == avif), ".#{$format}", "");
-    $url: getMultipleUrl($images, $viewport, $dppx, $format);
+    $url: get-multiple-url($images, $viewport, $dppx, $format); /* stylelint-disable-line function-no-unknown */
 
     @if $preimage != "" { /* stylelint-disable-line at-rule-no-unknown */
       $url: $preimage, $url;
@@ -200,40 +235,5 @@
     #{$class-name} & {
       background-image: $url;
     }
-  }
-}
-
-/// Служебная функция для миксина multiple-background-image
-@function getMultipleUrl($images, $viewport, $dppx, $format) {
-  $url: null;
-
-  @each $image in $images {
-    $name: map.get($image, "name");
-    $extention: map.get($image, "extention");
-
-    @if $format == original {
-      $url: $url, url("../img/#{$name}--#{$viewport}@#{$dppx}x.#{$extention}");
-    }
-
-    @else {
-      $url: $url, url("../img/#{$name}--#{$viewport}@#{$dppx}x.#{$format}");
-    }
-  }
-
-  @return $url;
-}
-
-/// Служебная функция для миксина bg-image и multiple-background-image
-@function getMediaQuery($viewport) {
-  @if $viewport == mobile { /* stylelint-disable-line at-rule-no-unknown */
-    @return all;
-  }
-
-  @if $viewport == tablet { /* stylelint-disable-line at-rule-no-unknown */
-    @return $not-mobile;
-  }
-
-  @if $viewport == desktop { /* stylelint-disable-line at-rule-no-unknown */
-    @return $desktop-only;
   }
 }

@@ -7,6 +7,7 @@ const parameters = {
   loopAddBlankSlides: false,
   slidesPerView: 1,
   slidesPerGroup: 2,
+  slidesPerGroupSkip: 2,
   allowTouchMove: false,
   modules: [ Navigation ],
   navigation: {
@@ -24,8 +25,6 @@ const parameters = {
       enabled: true,
       initialSlide: 1,
       slidesPerView: 3,
-      slidesPerGroup: 2,
-      slidesPerGroupSkip: 2,
       spaceBetween: 30,
     }
   },

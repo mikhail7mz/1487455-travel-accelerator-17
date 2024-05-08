@@ -65,6 +65,7 @@
   flex-direction: column;
   justify-content: flex-end;
   color: $color-white;
+  background-color: $color-deep-gray;
 }
 
 .tours__info {
@@ -77,10 +78,11 @@
 
 .tours__place {
   flex-shrink: 0;
-  min-width: 90px;
+  max-width: 100%;
   margin: 0;
   padding: 8px 12px 8px 34px;
-  font: var(--font-caption-medium);
+  font: var(--font-caption-medium, inherit);
+  overflow-wrap: anywhere;
   background-color: $color-effervescent-blue;
   background-image: url("/__spritemap#sprite-location-view");
   background-repeat: no-repeat;
@@ -93,14 +95,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  max-width: 100%;
   margin: 0;
   padding: 4px 0;
 }
 
 .tours__stats-item {
   flex-shrink: 0;
+  max-width: 100%;
   padding: 4px 0 4px 32px;
-  font: var(--font-caption-medium);
+  font: var(--font-caption-medium, inherit);
+  overflow-wrap: anywhere;
   background-repeat: no-repeat;
   background-size: 20px 20px;
   background-position: left top;
@@ -118,6 +123,7 @@
   margin: 0;
   margin-bottom: 15px;
   font: 700 24px/28px #{$font-family-default};
+  overflow-wrap: anywhere;
 
   @media #{$desktop-only} {
     width: 90%;
@@ -142,9 +148,25 @@
   margin: 0;
 }
 
+.tours__details-item {
+  overflow-wrap: anywhere;
+}
+
+.tours__details-item:nth-child(3n-2) {
+  width: 84px;
+}
+
+.tours__details-item:nth-child(3n-1) {
+  width: 83px;
+}
+
+.tours__details-item:nth-child(3n) {
+  max-width: 75px;
+}
+
 .tours__details-name {
   margin-bottom: 7px;
-  font: var(--font-caption-small);
+  font: var(--font-caption-small, inherit);
 }
 
 .tours__details-value {
@@ -164,7 +186,7 @@
 
   &::after {
     display: block;
-    width: calc(17px * var(--stars));
+    width: calc(17px * var(--stars, 0));
     height: 16px;
     background-image: url("/__spritemap#sprite-star-filled-view");
     background-size: 17px 16px;
@@ -193,8 +215,9 @@
   color: $color-dark;
   text-transform: uppercase;
   text-decoration: none;
-  font: var(--font-button-big);
+  font: var(--font-button-big, inherit);
   letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
 
   &::after {
     position: absolute;

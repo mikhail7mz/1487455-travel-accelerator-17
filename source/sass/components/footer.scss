@@ -1,10 +1,11 @@
+@use "sass:color";
 @use "../global/variables" as *;
 @use "../global/media" as *;
 @use "../global/mixins" as *;
 
 .footer {
   padding: 23px 0 20px;
-  box-shadow: 0 -1px 1px transparentize($color-dark, 0.7);
+  box-shadow: 0 -1px 1px color.adjust($color-dark, $alpha: -0.7);
 
   @media #{$not-mobile} {
     padding: 34px 0 20px;
@@ -77,20 +78,22 @@
   margin-bottom: 15px;
 
   @media #{$not-mobile} {
+    max-width: 150px;
     margin-bottom: 0;
   }
 }
 
 .footer__menu-link {
-  font: var(--font-input-nav);
+  font: var(--font-input-nav, inherit);
   text-decoration: none;
 }
 
 .footer__phone {
   display: none;
-  font: var(--font-heading-h6);
+  font: var(--font-heading-h6, inherit);
   color: $color-dark;
   text-decoration: none;
+  overflow-wrap: anywhere;
 
   &:focus {
     color: $color-effervescent-blue;
@@ -98,7 +101,7 @@
   }
 
   &:hover {
-    color: transparentize($color-effervescent-blue, 0.9);
+    color: color.adjust($color-effervescent-blue, $alpha: -0.9);
     cursor: pointer;
   }
 
@@ -125,7 +128,7 @@
 
 .footer__link {
   width: fit-content;
-  font: var(--font-caption-small);
+  font: var(--font-caption-small, inherit);
   text-align: center;
   grid-column: 1/-1;
 }

@@ -27,28 +27,28 @@
               <use href="/__spritemap#sprite-logo"/>
             </svg>
           </div>
-          <div class="header__menu" data-menu="true">
+          <nav class="header__menu" data-menu="true">
             <ul class="header__menu-list">
               <li class="header__menu-item">
-                <a class="header__menu-link link" href="#tours">Туры</a>
+                <a class="header__menu-link link" href="#tours" data-menu-link="true">Туры</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link link" href="#training">Обучение</a>
+                <a class="header__menu-link link" href="#training" data-menu-link="true">Обучение</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link link" href="#about">О нас</a>
+                <a class="header__menu-link link" href="#about" data-menu-link="true">О нас</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link link" href="#reviews">Отзывы</a>
+                <a class="header__menu-link link" href="#reviews" data-menu-link="true">Отзывы</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link link" href="#gallery">Фотографии</a>
+                <a class="header__menu-link link" href="#gallery" data-menu-link="true">Фотографии</a>
               </li>
               <li class="header__menu-item">
-                <a class="header__menu-link link" href="#contacts">Контакты</a>
+                <a class="header__menu-link link" href="#contacts" data-menu-link="true">Контакты</a>
               </li>
             </ul>
-          </div>
+          </nav>
           <a class="header__phone" href="tel:+78000000000">8 800 000-00-00</a>
         </div>
       </div>
@@ -162,6 +162,12 @@
                 <span class="visually-hidden">Следующий слайд.</span>
               </button>
             </div>
+            <!--  ///
+              На разных слайдах разные размеры мелких элементов и отступов между ними.
+              Поэтому часть элементов при переполнении переносится на новую строку,
+              и это является нормальным поведением. В частности название места, количество дней и ночей.
+              Их максимальная ширина ограничена шириной контейнера чтобы избежать выпадения.
+            ///  -->
             <div class="swiper">
               <ul class="tours__slider-list swiper-wrapper">
                 <li class="tours__slider-item swiper-slide">
@@ -293,7 +299,9 @@
       <section class="training" id="training" data-training-slider="true" data-test="training">
         <div class="container">
           <h2 class="training__heading heading" data-text="Обучение">Обучение</h2>
-          <p>Обучение проводится квалифицированными специалистами, за&nbsp;плечами&nbsp;которых десятки пройденных маршрутов Кавказа, Крыма, Гималаев, Эльбруса, Алтая, Карелии, Адыгеи и других.</p>
+          <div class="training__content-aria">
+            <p>Обучение проводится квалифицированными специалистами, за&nbsp;плечами&nbsp;которых десятки пройденных маршрутов Кавказа, Крыма, Гималаев, Эльбруса, Алтая, Карелии, Адыгеи и других.</p>
+          </div>
           <div class="training__slider-intro">
             <h3 class="training__slider-title heading">Наши инструкторы</h3>
             <div class="training__slider-navigation swiper-navigation">
@@ -315,7 +323,7 @@
                 <a class="training__slider-link" href="#">
                   <span class="visually-hidden">Перейти на страницу вконтакте к Александру Прокофьеву.</span>
                 </a>
-                <h4>Александр Прокофьев</h4>
+                <h4>Александр<br>Прокофьев</h4>
                 <p>Строгий и внимательный инструктор, весёлый и&nbsp;общительный человек. Любит природу.</p>
               </li>
               <li class="training__slider-item swiper-slide">
@@ -326,7 +334,7 @@
                 <a class="training__slider-link" href="#">
                   <span class="visually-hidden">Перейти на страницу вконтакте к Светлане Афиногеновой.</span>
                 </a>
-                <h4>Светлана Афиногенова</h4>
+                <h4>Светлана<br>Афиногенова</h4>
                 <p>Видеть мир вокруг, познавать его опасности, находить друг друга, становиться ближе, чувствовать — в этом назначение жизни.</p>
               </li>
               <li class="training__slider-item swiper-slide">
@@ -337,7 +345,7 @@
                 <a class="training__slider-link" href="#">
                   <span class="visually-hidden">Перейти на страницу вконтакте к Надежде Колесниченко.</span>
                 </a>
-                <h4>Надежда Колесниченко</h4>
+                <h4>Надежда<br>Колесниченко</h4>
                 <p>Участники говорят, что&nbsp;Надежда ответственная, приятная в общении, и&nbsp;в&nbsp;поездках с&nbsp;ней&nbsp;чувствуешь себя спокойно и уверенно.</p>
               </li>
               <li class="training__slider-item swiper-slide">
@@ -348,7 +356,7 @@
                 <a class="training__slider-link" href="#">
                   <span class="visually-hidden">Перейти на страницу вконтакте к Федору Кайгородову.</span>
                 </a>
-                <h4>Федор Кайгородов</h4>
+                <h4>Федор<br>Кайгородов</h4>
                 <p>Опыт походов: Ходит в походы с 2001 года. В России побывал в горных районах Хибины, Архыз, много путешествует по Европе.</p>
               </li>
               <li class="training__slider-item swiper-slide">
@@ -359,7 +367,7 @@
                 <a class="training__slider-link" href="#">
                   <span class="visually-hidden">Перейти на страницу вконтакте к Даниэлю Васнецову.</span>
                 </a>
-                <h4>Даниэль Васнецов</h4>
+                <h4>Даниэль<br>Васнецов</h4>
                 <p>Покорял самые сложные вершины. Выбирался из под лавин, дружит с медведями и не только.</p>
               </li>
             </ul>
@@ -636,7 +644,7 @@
               </label>
               <label class="form__field">
                 <span class="visually-hidden">Email.</span>
-                <input class="form__field-input" type="text" name="email" placeholder="Email" pattern='[a-zA-Zа-яёА-ЯЁ0-9]{1}([a-zA-Zа-яёА-ЯЁ0-9\-_\.]{1,})?@[a-zA-Zа-яёА-ЯЁ0-9\-]{1}([a-zA-Zа-яёА-ЯЁ0-9.\-]{1,})?[a-zA-Zа-яёА-ЯЁ0-9\-]{1}\.[a-zA-Zа-яёА-ЯЁ]{2,6}' title="Введите корректный Email." required>
+                <input class="form__field-input" type="text" name="email" placeholder="Email" pattern="[a-zA-Zа-яёА-ЯЁ0-9]{1}([a-zA-Zа-яёА-ЯЁ0-9\-_\.]{1,})?@[a-zA-Zа-яёА-ЯЁ0-9\-]{1}([a-zA-Zа-яёА-ЯЁ0-9.\-]{1,})?[a-zA-Zа-яёА-ЯЁ0-9\-]{1}\.[a-zA-Zа-яёА-ЯЁ]{2,6}" title="Введите корректный Email." required>
               </label>
               <button class="form__button button" type="submit">Отправить</button>
             </form>
@@ -656,13 +664,13 @@
               <div class="contacts__details-item contacts__details-item--phone">
                 <dt class="contacts__details-name">Телефон</dt>
                 <dd class="contacts__details-value">
-                  <a class="contacts__details-link" href="tel:+79837454545">+7 983 745-45-45</a>
+                  <a class="contacts__details-link link link--dark" href="tel:+79837454545">+7 983 745-45-45</a>
                 </dd>
               </div>
               <div class="contacts__details-item contacts__details-item--email">
                 <dt class="contacts__details-name">Email</dt>
                 <dd class="contacts__details-value">
-                  <a class="contacts__details-link" href="mailto:info@lifetour.com">info@lifetour.com</a>
+                  <a class="contacts__details-link link link--dark" href="mailto:info@lifetour.com">info@lifetour.com</a>
                 </dd>
               </div>
               <div class="contacts__details-item contacts__details-item--address">
