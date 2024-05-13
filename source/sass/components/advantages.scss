@@ -31,8 +31,12 @@
   }
 }
 
-.advantages__slider {
-  overflow: visible;
+.advantages__slider--wide {
+  @media #{$desktop-only} {
+    position: relative;
+    left: -410px;
+    width: 2020px;
+  }
 }
 
 .advantages__slider-list {
@@ -73,7 +77,7 @@
   }
 
   @media #{$desktop-only} {
-    max-width: none;
+    max-width: 380px;
     min-height: auto;
     padding: 39px 19px;
   }

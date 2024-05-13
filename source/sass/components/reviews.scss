@@ -58,12 +58,14 @@
 
 .reviews__slider-list {
   display: flex;
+  gap: 30px;
   margin: 0;
   padding: 0;
   list-style-type: none;
   transition: transform 0.3s ease;
 
   @media #{$desktop-only} {
+    gap: 120px;
     padding: 10px;
   }
 }
@@ -76,11 +78,13 @@
   box-shadow: 0 0 20px color.adjust($color-deep-blue, $alpha: -0.9);
 
   @media #{$not-mobile} {
+    width: 565px;
     min-height: 277px;
     padding: 20px 30px 20px 236px;
   }
 
   @media #{$desktop-only} {
+    width: 700px;
     min-height: 293px;
     padding: 20px 40px 20px 308px;
   }
@@ -91,6 +95,7 @@
   width: 250px;
   height: 169px;
   margin-bottom: 20px;
+  background-color: $color-deep-gray;
 
   @media #{$not-mobile} {
     position: absolute;

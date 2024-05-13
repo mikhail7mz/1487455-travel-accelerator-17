@@ -1,4 +1,4 @@
-import { initSlider } from './slider';
+import { initSlider, observeFocusWithinSlide } from './slider';
 import { Pagination } from 'swiper/modules';
 
 const parameters = {
@@ -7,10 +7,16 @@ const parameters = {
   modules: [ Pagination ],
   pagination: {
     el: '.hero__pagination',
-    bulletElement: 'button',
     bulletClass: 'hero__pagination-toggle',
     bulletActiveClass: 'active',
     clickable: true,
+    renderBullet: (index, className) =>
+      `<button class="${className}" type="button">
+        <span class="visually-hidden">Слайд ${index + 1}.</span>
+      </button>`,
+  },
+  on: {
+    init: observeFocusWithinSlide,
   },
   breakpoints: {
     1440: {

@@ -149,6 +149,7 @@
   max-width: none;
   height: 343px;
   margin: 0 calc(var(--page-offset, 0) * -1);
+  background-color: $color-deep-gray;
 
   @media #{$not-mobile} {
     width: 768px;

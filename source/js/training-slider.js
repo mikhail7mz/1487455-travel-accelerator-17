@@ -1,4 +1,4 @@
-import { initSlider } from './slider';
+import { initSlider, observeFocusWithinSlide } from './slider';
 import { Navigation } from 'swiper/modules';
 
 const parameters = {
@@ -9,6 +9,9 @@ const parameters = {
     nextEl: '.training [data-next]',
     prevEl: '.training [data-prev]',
     disabledClass: 'disabled',
+  },
+  on: {
+    init: observeFocusWithinSlide,
   },
   breakpoints: {
     768: {

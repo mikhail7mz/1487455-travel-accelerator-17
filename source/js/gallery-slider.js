@@ -17,6 +17,7 @@ const parameters = {
   breakpoints: {
     1440: {
       enabled: false,
+      loop: false,
       spaceBetween: 0,
     }
   },

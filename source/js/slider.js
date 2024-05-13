@@ -8,7 +8,7 @@ const onInteractiveElementFocus = (swiper, index) => {
   }
 };
 
-const onInit = (swiper) => {
+const observeFocusWithinSlide = (swiper) => {
   const slideElements = swiper.el.querySelectorAll('.swiper-slide');
   slideElements.forEach((slide, index) => {
     const interactiveElements = slide.querySelectorAll(INTERACTIVE_ELEMENT_TAGS);
@@ -21,10 +21,8 @@ const onInit = (swiper) => {
 const initSlider = (querySelector, parameters) => {
   const element = document.querySelector(querySelector);
   const swiperElement = element.querySelector('.swiper');
-  parameters.on = parameters.on ? parameters.on : {};
-  parameters.on.init = onInit;
   const swiper = new Swiper(swiperElement, parameters);
   swiper.init();
 };
 
-export {initSlider};
+export {initSlider, observeFocusWithinSlide};

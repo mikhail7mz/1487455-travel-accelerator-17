@@ -39,6 +39,7 @@
   background-size: 346px 596px;
 
   @media #{$not-mobile} {
+    min-width: $breakpoint-tablet;
     background-position:
       center top 4048px,
       left calc(50% + 339px) top 2365px,
@@ -50,6 +51,7 @@
   }
 
   @media #{$desktop-only} {
+    min-width: $breakpoint-desktop;
     background-position:
       center top 3643px,
       left calc(50% + 507px) top 2352px,
