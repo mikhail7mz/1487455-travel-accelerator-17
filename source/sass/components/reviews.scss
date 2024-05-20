@@ -43,6 +43,18 @@
 
 .reviews__slider {
   overflow: visible;
+
+  @media #{$not-mobile} {
+    overflow: clip;
+    margin: -20px;
+    padding: 20px;
+  }
+
+  @media #{$desktop-only} {
+    overflow: clip;
+    margin-right: calc(var(--page-offset) * -1);
+    padding-right: var(--page-offset);
+  }
 }
 
 .reviews__slider-navigation {
@@ -58,14 +70,12 @@
 
 .reviews__slider-list {
   display: flex;
-  gap: 30px;
   margin: 0;
   padding: 0;
   list-style-type: none;
   transition: transform 0.3s ease;
 
   @media #{$desktop-only} {
-    gap: 120px;
     padding: 10px;
   }
 }

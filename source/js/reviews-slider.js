@@ -3,7 +3,8 @@ import { Navigation } from 'swiper/modules';
 
 const parameters = {
   modules: [ Navigation ],
-  slidesPerView: 'auto',
+  slidesPerView: 1,
+  spaceBetween: 30,
   navigation: {
     nextEl: '.reviews [data-next]',
     prevEl: '.reviews [data-prev]',
@@ -13,8 +14,14 @@ const parameters = {
   slideClass: 'reviews__slider-item',
   wrapperClass: 'reviews__slider-list',
   breakpoints: {
+    768: {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+    },
     1440: {
+      slidesPerView: 'auto',
       allowTouchMove: false,
+      spaceBetween: 120,
     }
   },
 };
