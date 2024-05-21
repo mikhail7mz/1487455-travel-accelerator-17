@@ -66,12 +66,12 @@
 
   @media #{$not-mobile} {
     margin-bottom: 25px;
-    padding-bottom: 6px;
+    padding: 3px 0;
   }
 
   @media #{$desktop-only} {
     margin-bottom: 20px;
-    padding-bottom: 0;
+    padding: 0;
   }
 }
 
