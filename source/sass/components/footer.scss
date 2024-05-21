@@ -58,6 +58,7 @@
   column-gap: 50px;
 
   @media #{$not-mobile} {
+    justify-self: end;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -68,7 +69,9 @@
   }
 
   @media #{$desktop-only} {
+    justify-self: center;
     padding-top: 22px;
+    gap: 30px;
   }
 }
 
@@ -115,6 +118,7 @@
   }
 
   @media #{$desktop-only} {
+    justify-self: end;
     display: block;
     padding-top: 21px;
   }

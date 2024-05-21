@@ -45,7 +45,6 @@
   overflow: visible;
 
   @media #{$not-mobile} {
-    overflow: clip;
     margin: -20px;
     padding: 20px;
   }
